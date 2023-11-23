@@ -22,9 +22,27 @@ This project was done for self-learning purposes to showcase full-stack developm
 * CSS animations for buttons, text, and website images
 
 ---
+## Application Usage Summary
+![Home](Home/UI.png)
+
+
+After installation of the required packages and initialization of the backend and frontend servers, the user will be welcomed with this page for a "sign-in" or "log-in" option. Both require an email and password
+
+![Show Schedule](Images/Onboarding.png)
+
+
+If a user decides to create an account, the onboarding page will be presented for user input. The form requires a name, birth date, gender identity and interest, and an image URL for card presentation.
+
+![Volunteer Shifts](/Images/Dashboard.png)
+
+
+After sign-in or log-in is complete, the user will receive an auth token as a cookie and will be brought to the dashboard screen. Presenting a card deck populated by MongoDB objects that the user can swipe through.
+
+---
 ## Installation Instructions
 1. Clone this project
 2. Setup a local directory for executable creation
 3. Setup a MongoDB cluster and connect it with server.js while configuring desired host settings (Localhost or otherwise)
-4. On a separate terminal, activate backend via 'nodemon server.js' in backend folder
-5. Within frontend folder, activate frontend via 'npm start' in another terminal instance
+4. Use npm to install all required node modules from the 'tinder-frontend' end 'tinder-backend' package.json files
+5. On a separate terminal, activat the backend via 'nodemon server.js' in 'tinder-backend' folder
+6. Within 'tinder-frontend' folder, activate the frontend via 'npm start' in another terminal instance
