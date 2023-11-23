@@ -23,7 +23,7 @@ This project was done for self-learning purposes to showcase full-stack developm
 
 ---
 ## Application Usage Summary
-![Home](Home/UI.png)
+![Home](Images/Home.png)
 
 
 After installation of the required packages and initialization of the backend and frontend servers, the user will be welcomed with this page for a "sign-in" or "log-in" option. Both require an email and password
