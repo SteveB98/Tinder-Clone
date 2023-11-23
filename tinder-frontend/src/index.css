@@ -271,6 +271,7 @@ nav .logo{
 }
 .onboarding form .multiple-input-container input{
   margin-right: 10px;
+  
 }
 .onboarding form .multiple-input-container input:hover::placeholder{
   color:  rgb(221,39,22);
@@ -280,15 +281,16 @@ nav .logo{
   border: solid 2px rgb(144,144,144);
   border-radius: 10px;
   margin-right: 10px;
+  background-color: rgb(255,255,255);
 }
 
 .onboarding form input[type="radio"]{
   display: none;
+  
 }
 
 .onboarding form input[type="radio"]:checked+ label{
   border: solid 2px rgb(221,39,22);
-  
 }
 /*When button is pressed, it's label doesn't hover on webpage*/
 .onboarding form input[type="radio"]:checked+ label:hover{
