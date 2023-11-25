@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;700&display=swap');
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-500px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(+500px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+/*------Onboarding Page------*/
+.onboarding{
+    border-top: 1px rgb(154,154,154);
+    background: url('../jenga 2.png');
+    background-size: cover;
+  }
+  .onboarding label {
+    margin: 10px 0;
+    background-color: rgb(255,255,255);
+    animation: fadeIn 1.5s;
+    max-width: 150px;
+    background-size: -5px -5px;
+  }
+  .onboarding h1{
+    font-size: 35px;
+    margin: 0px;
+    animation: fadeIn 1.5s;
+  }
+  
+  .onboarding h2{
+    margin: 0px;
+    font-size: 25px;
+    animation: fadeIn 1.5s;
+  }
+  
+  .onboarding form {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .onboarding form section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 35%;
+    text-align: start;
+  }
+  /*Input data fields for name, url, and about*/
+  .onboarding form input{
+    padding: 15px 30px;
+    margin: 10px 0;
+    font-size: 15px;
+    border: solid 2px rgb(219,219,219);
+    border-radius: 10px;
+    animation: fadeIn 1.5s;
+  }
+  
+  .onboarding form input:hover::placeholder{
+    color:  rgb(221,39,22);
+  }
+  .onboarding form input::-webkit-outer-spin-button,
+  .onboarding form input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /*UI Labels*/
+  
+  /*UI Selector Fields*/
+  .onboarding form .multiple-input-container{
+    display: flex;
+    flex-direction: row;
+    animation: fadeIn 1.5s;
+  }
+  .onboarding form .multiple-input-container input{
+    margin-right: 10px;
+    
+  }
+  .onboarding form .multiple-input-container input:hover::placeholder{
+    color:  rgb(221,39,22);
+  }
+  .onboarding form .multiple-input-container label{
+    padding: 10px;
+    border: solid 2px rgb(144,144,144);
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: rgb(255,255,255);
+  }
+  
+  .onboarding form input[type="radio"]{
+    display: none;
+    
+  }
+  
+  .onboarding form input[type="radio"]:checked+ label{
+    border: solid 2px rgb(221,39,22);
+  }
+  /*When button is pressed, it's label doesn't hover on webpage*/
+  .onboarding form input[type="radio"]:checked+ label:hover{
+    transform: none;
+    color:  rgb(0,0,0);
+  }
+  /*Unselected buttons hover on webpage*/
+  .onboarding form input[type="radio"]:hover+label{
+    transition:all 0.3s;
+    color:  rgb(221,39,22);
+    transform: translateY(-5px);
+  }
+  
+  .onboarding form input[type="number"]{
+    width: 10%;
+  }
+  
+  .onboarding form input[type="submit"]{
+    transition:all 1.5s;
+  }
+  
+  .onboarding form input[type="submit"]:hover{
+    color: rgb(207, 89, 78);
+    background-color: rgb(235,235,235);
+    transform: translateY(-5px);
+  }
+  
+  .onboarding form input[type="submit"]:active{
+    color: rgb(235,235,235);
+    background-color: rgb(226,115,155);
+  }
+  
+  .onboarding form .photo-container img{
+    width: 100%;
+  }
