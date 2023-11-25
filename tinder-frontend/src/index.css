@@ -33,7 +33,9 @@ html,body{
   block-size: 100%;
   inline-size: 100%;
 }
-
+h1 {
+  text-align: center;
+}
 h2{
   font-size: 35px;
   font-style: italic;
@@ -57,9 +59,11 @@ h3{
   color: rgba(255,255,255);
   animation: fadeIn  0.6s, slideInLeft 0.6s ease-in;
   max-width: 570px;
-  right: -495px;
-  
-  position: relative;
+  top: 39%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
   transition: opacity 1s ease-in-out;
 
 }
@@ -112,6 +116,9 @@ h3{
   padding: 12px 30px;
   border-radius: 30px;
   border: none;
+  top: 57%;
+  transform: translate(-50%, -50%);
+  position: absolute;
   transition:all 0.3s;
   animation: fadeIn 1s;
 }
@@ -119,20 +126,19 @@ h3{
   content: " ";
   display: block;
   position: absolute;
-  top: 0px; right: 0px; left: 0px;
-  size: 100
-  ;
+  size: 100;
   border-radius: 100px;
   background: hsla(7, 85%, 49%, 0.223);
   z-index: -1;
+  top: 57%;
+  transform: translate(-20%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   -moz-transition: opacity 0.3s ease-in-out;
   -webkit-transition: opacity 0.3s ease-in-out;
   height: 70px;
   width: 220px;
-  top: -10px;
-  left: -10px;
+
 }
 
 /*Red Background around Hero Placement*/
@@ -143,9 +149,7 @@ h3{
   backface-visibility: hidden;
   height: 70px;
   width: 220px;
-  top: -10px;
-  left: -10px;
-
+  position: absolute;
   border-radius: 100px;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -158,7 +162,7 @@ h3{
 
 
 .primary-button:hover{
-  transform: translateY(-10px);
+  transform: translate(-50%, calc(-50% - 10.5px));
   background: linear-gradient(260deg, rgb(254,48,114), rgb(255,89,64));
 }
 
@@ -298,7 +302,7 @@ nav .logo{
             to bottom,
             rgba(0, 0, 0, 0.65) 0%,
             rgba(0, 0, 0, 0) 100%
-  ), url('jenga.jpg');
+  ), url('Lander-Background.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -362,125 +366,6 @@ nav .logo{
 .auth-modal input[type=password]:hover::placeholder,
 .auth-modal input[type=email]:hover::placeholder{
   color:  rgb(221,39,22);
-}
-
-
-/*------Onboarding Page------*/
-.onboarding{
-  border-top: 1px rgb(154,154,154);
-  background: url('jenga 2.png');
-  background-size: cover;
-}
-
-.onboarding h1{
-  font-size: 35px;
-  margin: 0px;
-  animation: fadeIn 2s;
-}
-
-.onboarding h2{
-  margin: 0px;
-  font-size: 25px;
-  animation: fadeIn 2s;
-}
-
-.onboarding form {
-  display: flex;
-  justify-content: center;
-}
-
-.onboarding form section {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  width: 35%;
-  text-align: start;
-}
-/*Input data fields for name, url, and about*/
-.onboarding form input{
-  padding: 15px 30px;
-  margin: 10px 0;
-  font-size: 15px;
-  border: solid 2px rgb(219,219,219);
-  border-radius: 10px;
-  animation: fadeIn 4s;
-}
-
-.onboarding form input:hover::placeholder{
-  color:  rgb(221,39,22);
-}
-.onboarding form input::-webkit-outer-spin-button,
-.onboarding form input::-webkit-inner-spin-button{
-  -webkit-appearance: none;
-  margin: 0;
-}
-/*UI Labels*/
-.onboarding form label {
-  margin: 10px 0;
-  animation: fadeIn 1s;
-}
-/*UI Selector Fields*/
-.onboarding form .multiple-input-container{
-  display: flex;
-  flex-direction: row;
-  animation: fadeIn 4s;
-}
-.onboarding form .multiple-input-container input{
-  margin-right: 10px;
-  
-}
-.onboarding form .multiple-input-container input:hover::placeholder{
-  color:  rgb(221,39,22);
-}
-.onboarding form .multiple-input-container label{
-  padding: 10px;
-  border: solid 2px rgb(144,144,144);
-  border-radius: 10px;
-  margin-right: 10px;
-  background-color: rgb(255,255,255);
-}
-
-.onboarding form input[type="radio"]{
-  display: none;
-  
-}
-
-.onboarding form input[type="radio"]:checked+ label{
-  border: solid 2px rgb(221,39,22);
-}
-/*When button is pressed, it's label doesn't hover on webpage*/
-.onboarding form input[type="radio"]:checked+ label:hover{
-  transform: none;
-  color:  rgb(0,0,0);
-}
-/*Unselected buttons hover on webpage*/
-.onboarding form input[type="radio"]:hover+label{
-  transition:all 0.3s;
-  color:  rgb(221,39,22);
-  transform: translateY(-5px);
-}
-
-.onboarding form input[type="number"]{
-  width: 10%;
-}
-
-.onboarding form input[type="submit"]{
-  transition:all 0.3s;
-}
-
-.onboarding form input[type="submit"]:hover{
-  color: rgb(207, 89, 78);
-  background-color: rgb(235,235,235);
-  transform: translateY(-5px);
-}
-
-.onboarding form input[type="submit"]:active{
-  color: rgb(235,235,235);
-  background-color: rgb(226,115,155);
-}
-
-.onboarding form .photo-container img{
-  width: 100%;
 }
 
 /*------Dashboard Page(tindercards component)------*/
