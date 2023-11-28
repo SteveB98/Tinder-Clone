@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;700&display=swap');
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-500px);
+@keyframes fadeInSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100%, -50%);
   }
-  to {
-    transform: translateX(0px);
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
 }
+
 @keyframes slideInRight {
   from {
     transform: translateX(+500px);
@@ -57,14 +60,15 @@ h3{
 .primary-title{
   font-size: 90px;
   color: rgba(255,255,255);
-  animation: fadeIn  0.6s, slideInLeft 0.6s ease-in;
+  animation: fadeInSlideInLeft 0.6s ease-in;
   max-width: 570px;
   top: 39%;
-  left: 50%;
+  left: 49.5%;
   transform: translate(-50%, -50%);
   text-align: center;
   position: absolute;
   transition: opacity 1s ease-in-out;
+  z-index: 0;
 
 }
 
@@ -108,6 +112,7 @@ h3{
 }
 /*--------------------Primary and Secondary Buttons---------------------------*/
 
+
 .primary-button{
   color: #fff;
   text-transform: uppercase;
@@ -116,12 +121,21 @@ h3{
   padding: 12px 30px;
   border-radius: 30px;
   border: none;
-  top: 57%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  transition:all 0.3s;
+  top: auto;
+  left: autp;
+  margin-top: 20px; /* adjust as needed */
+  position: relative;
+  transition:all 0.5s;
   animation: fadeIn 1s;
+  z-index: 0;
 }
+
+.primary-button:hover{
+  transition:all 0.3s;
+  transform: translateY(-10px);
+  background: linear-gradient(260deg, rgb(254,48,114), rgb(255,89,64));
+}
+
 .primary-button::before {
   content: " ";
   display: block;
@@ -140,7 +154,6 @@ h3{
   width: 220px;
 
 }
-
 /*Red Background around Hero Placement*/
 .primary-button:hover::before {
   display: block;
@@ -159,13 +172,7 @@ h3{
   -webkit-transition: opacity 0.2s ease-in-out;
  /*transform-origin: bottom left;*/
 }
-
-
-.primary-button:hover{
-  transform: translate(-50%, calc(-50% - 10.5px));
-  background: linear-gradient(260deg, rgb(254,48,114), rgb(255,89,64));
-}
-
+/*Submit Button on Auth Modal*/
 .secondary-button{
   color: rgb(121,119,119);
   background-color: rgb(255,255,255);
@@ -176,12 +183,13 @@ h3{
   border-radius: 30px;
   border: solid 2px rgb(121,119,119);
   margin: 6px;
-  transition: all 0.3s;
+  transition: all 0.6s;
 }
 
 .secondary-button:hover {
   color: rgb(207, 89, 78);
   background-color: rgb(235,235,235);
+  transition: all 0.3s;
   transform: translateY(-5px);
   border: solid 2px rgb(48,48,48);
 }
@@ -193,6 +201,14 @@ h3{
 
 .secondary-button::after{
   animation: preloader .6s ease-in-out alternate infinite;
+}
+
+@media screen and (max-width: 600px) {
+  .primary-button{
+    top: calc(50% + -15vh);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 /*-------------------Body-------------------*/
 body {
@@ -223,7 +239,7 @@ nav .nav-button {
   border: none;
   margin: 10px;
   animation: fadeIn 1s;
-  transition:all 0.3s;
+  transition:all 0.6s;
 }
 
 nav .nav-button:disabled{
@@ -235,7 +251,10 @@ nav .nav-button:hover{
   transform: translateY(+10px);
   background-color: rgb(254,48,114);
   color: rgb(255,255,255);
+  transition:all 0.3s;
 }
+
+
 
 nav .logo_container{
   width: 170px;
@@ -307,11 +326,35 @@ nav .logo{
   background-size: cover;
 }
 
-.home{
-  margin-top: 30vh;
+.overlay::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0px; left: 0px;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+}
+.overlay.blur::before {
+  filter: blur(10px); /* adjust as needed */
+}
+.primary-button:active ~ .overlay::before {
+  filter: blur(10px); /* adjust as needed */
 }
 
+nav.nav-button:active ~ .overlay::before {
+  filter: blur(10px); /* adjust as needed */
+}
 
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 96vh; /* adjust as needed */
+  gap: 20px; /* adjust as needed */
+}
 /*------Auth Modal------*/
 .auth-modal {
   position: absolute;
@@ -369,8 +412,6 @@ nav .logo{
 }
 
 /*------Dashboard Page(tindercards component)------*/
-
-
 .tindercards{
   display: flex;
  justify-content: space-between;
