@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import {useCookies} from 'react-cookie'
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
+import "./OnBoarding.css";
 
 const OnBoarding = () => {
   const [cookies, setCookie,removeCookie] = useCookies(['user'])
@@ -49,13 +50,15 @@ const OnBoarding = () => {
 
   return (
     <>
-      <Nav minimal={true} setShowModal={() => {}} showModal={false} />
       <div className="onboarding">
+      <Nav minimal={true} setShowModal={() => {}} showModal={false} />
         <h1>CREATE ACCOUNT</h1>
         <h2>Fill in your account details</h2>
         <form onSubmit={handleSubmit}>
           <section>
-            <label htmlFor="first_name">First Name</label>
+            <label htmlFor="first_name">
+              <span>First Name</span>
+              </label>
             <input
               id="first_name"
               type="text"
@@ -65,7 +68,9 @@ const OnBoarding = () => {
               value={formData.first_name}
               onChange={handleChange}
             />
-            <label>Birthday</label>
+            <label>
+              <span>Birthday</span>
+              </label>
             <div className="multiple-input-container">
               <input
                 id="dob_day"
@@ -95,7 +100,9 @@ const OnBoarding = () => {
                 onChange={handleChange}
               />
             </div>
-            <label>Gender</label>
+            <label>
+              <span>Gender</span>
+              </label>
             <div className="multiple-input-container">
               <input
                 id="man-gender-identity"
@@ -128,15 +135,20 @@ const OnBoarding = () => {
               />
               <label htmlFor="trans-gender-identity">Trans</label>
             </div>
-            <label htmlFor="show-gender">Show gender on my profile</label>
+            <label htmlFor="show-gender">
+            <span>Show gender on my profile</span>
+            </label>
             <input
               id="show-gender"
               type="checkbox"
               name="show_gender"
+              className="regular-checkbox"
               onChange={handleChange}
               checked={formData.show_gender}
             />
-            <label>Show Me</label>
+            <label>
+              <span>Show Me</span>
+              </label>
             <div className="multiple-input-container">
               <input
                 id="man-gender-interest"
@@ -169,7 +181,9 @@ const OnBoarding = () => {
               />
               <label htmlFor="trans-gender-interest">Trans</label>
             </div>
-            <label htmlFor="about">About Me</label>
+            <label htmlFor="about">
+              <span>About Me</span>
+              </label>
             <input
               id="about"
               type="text"
@@ -181,9 +195,10 @@ const OnBoarding = () => {
             />
             <input type="submit"/>
           </section>
-
           <section>
-            <label htmlFor="url"> Profile Photo</label>
+            <label htmlFor="url"> 
+            <span>Profile Photo</span>
+            </label>
             <input
               type="url"
               name="url"
