@@ -2,7 +2,7 @@ import { useState} from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import {useCookies} from 'react-cookie'
-const AuthModal = ({setShowModal,  isSignUp}) => {
+const AuthModal = ({setShowModal,  isSignUp, onClose, showModal}) => {
 
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
@@ -15,8 +15,11 @@ const AuthModal = ({setShowModal,  isSignUp}) => {
     console.log(email, password,confirmPassword)
     const handleClick = () => {
         setShowModal(false)
+        onClose();
     }
 
+    if (!showModal) return null;
+    
     //We don't want to refresh page on submit, prevents refresh action
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -71,11 +74,12 @@ const AuthModal = ({setShowModal,  isSignUp}) => {
                         required={true}
                         onChange={(e) =>setConfirmPassword(e.target.value)}
                     />}
-                    <input  className ="secondary-button" type = "submit"/>
+                    <input class="loader" className ="secondary-button" type = "submit"/>
+                  
                     <p>{error}</p>
            </form>
            <hr/>
-           <h2>GET THE APP</h2>
+           <h3>GET THE APP</h3>
         </div>
     )
 }
