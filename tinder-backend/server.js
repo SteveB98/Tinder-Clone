@@ -9,8 +9,10 @@ import bcrypt from 'bcrypt'
 //For each project involving a MongooseDB, npm i nodemon must be installed 
 
 //App Configuration
+const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
-const port = process.env.PORT || 8001
+const port = process.env.PORT || 3000;
 const connection_url= 'mongodb+srv://steveberg:yourdaddy@cluster0.qdug01t.mongodb.net/?retryWrites=true&w=majority'
 
 //Middlewares
@@ -172,4 +174,4 @@ app.get('/tinder/users',(req,res) => {
 })
 
 //Listener
-app.listen(port,() => console.log('listening on localhost:', {port}));
+app.listen(port, () => console.log(`Listening on http://localhost:${port}`));
